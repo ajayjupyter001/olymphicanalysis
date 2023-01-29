@@ -124,7 +124,7 @@ def get1(df,sport):
     dfv = df.dropna(subset=["Height", "Weight"]).fillna("No_Medal")
     get = dfv[dfv["Sport"] == sport][["Height","Weight","Medal","Sex"]]
     fig, ax = plt.subplots(figsize=(20, 10))
-    ax = sns.scatterplot(get.Height,get.Weight,hue=get.Medal,style=get.Sex,s=200)
+    ax = sns.scatterplot(x=get.Height,y=get.Weight,hue=get.Medal,style=get.Sex,s=200)
     return fig
 
 

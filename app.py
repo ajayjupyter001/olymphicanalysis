@@ -106,7 +106,10 @@ if option == "Countary-wise Analysis":
     select = st.sidebar.selectbox("Select the country",new)
     st.plotly_chart(helper.get_contry(data,select))
     st.title("No of Medals over Events")
-    helper.get(data,select)
+    try:
+        helper.get(data,select)
+    except:
+        st.header("No data")
     st.title("Top players in {}".format(select))
     y = st.selectbox("Select N top players",[i for i in range(5,20,1)])
     helper.get_contry2(data,select,y)
